@@ -1,0 +1,1312 @@
+{% extends "frontend/layout/base.html" %}
+
+{% block mystyle %}
+<style id='moove_gdpr_frontend-inline-css' type='text/css'>
+    #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main h3.tab-title,
+    #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main span.tab-title,
+    #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li a,
+    #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li button,
+    #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content .moove-gdpr-branding-cnt a,
+    #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder a.mgbutton,
+    #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder button.mgbutton,
+    #moove_gdpr_cookie_modal .cookie-switch .cookie-slider:after,
+    #moove_gdpr_cookie_modal .cookie-switch .slider:after,
+    #moove_gdpr_cookie_modal .switch .cookie-slider:after,
+    #moove_gdpr_cookie_modal .switch .slider:after,
+    #moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content p,
+    #moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content p a,
+    #moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton,
+    #moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton,
+    #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content h1,
+    #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content h2,
+    #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content h3,
+    #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content h4,
+    #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content h5,
+    #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content h6,
+    #moove_gdpr_cookie_modal .moove-gdpr-modal-content.moove_gdpr_modal_theme_v2 .moove-gdpr-modal-title .tab-title,
+    #moove_gdpr_cookie_modal .moove-gdpr-modal-content.moove_gdpr_modal_theme_v2 .moove-gdpr-tab-main h3.tab-title,
+    #moove_gdpr_cookie_modal .moove-gdpr-modal-content.moove_gdpr_modal_theme_v2 .moove-gdpr-tab-main span.tab-title,
+    #moove_gdpr_cookie_modal .moove-gdpr-modal-content.moove_gdpr_modal_theme_v2 .moove-gdpr-branding-cnt a {
+        font-weight: inherit
+    }
+
+    #moove_gdpr_cookie_modal,
+    #moove_gdpr_cookie_info_bar,
+    .gdpr_cookie_settings_shortcode_content {
+        font-family: Gilroy, sans-serif
+    }
+
+    #moove_gdpr_save_popup_settings_button {
+        background-color: #373737;
+        color: #fff
+    }
+
+    #moove_gdpr_save_popup_settings_button:hover {
+        background-color: #000
+    }
+
+    #moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton,
+    #moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton {
+        background-color: #0c4da2
+    }
+
+    #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder a.mgbutton,
+    #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder button.mgbutton,
+    .gdpr_cookie_settings_shortcode_content .gdpr-shr-button.button-green {
+        background-color: #0c4da2;
+        border-color: #0c4da2
+    }
+
+    #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder a.mgbutton:hover,
+    #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder button.mgbutton:hover,
+    .gdpr_cookie_settings_shortcode_content .gdpr-shr-button.button-green:hover {
+        background-color: #fff;
+        color: #0c4da2
+    }
+
+    #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-close i,
+    #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-close span.gdpr-icon {
+        background-color: #0c4da2;
+        border: 1px solid #0c4da2
+    }
+
+    #moove_gdpr_cookie_info_bar span.change-settings-button.focus-g {
+        -webkit-box-shadow: 0 0 1px 3px #0c4da2;
+        -moz-box-shadow: 0 0 1px 3px #0c4da2;
+        box-shadow: 0 0 1px 3px #0c4da2
+    }
+
+    #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-close i:hover,
+    #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-close span.gdpr-icon:hover,
+    #moove_gdpr_cookie_info_bar span[data-href]>u.change-settings-button {
+        color: #0c4da2
+    }
+
+    #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li.menu-item-selected a span.gdpr-icon,
+    #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li.menu-item-selected button span.gdpr-icon {
+        color: inherit
+    }
+
+    #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li:hover a,
+    #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li:hover button {
+        color: #000
+    }
+
+    #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li a span.gdpr-icon,
+    #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li button span.gdpr-icon {
+        color: inherit
+    }
+
+    #moove_gdpr_cookie_modal .gdpr-acc-link {
+        line-height: 0;
+        font-size: 0;
+        color: transparent;
+        position: absolute
+    }
+
+    #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-close:hover i,
+    #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li a,
+    #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li button,
+    #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li button i,
+    #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li a i,
+    #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content a:hover,
+    #moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton:hover,
+    #moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton:hover,
+    #moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a:hover,
+    #moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button:hover,
+    #moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content span.change-settings-button:hover,
+    #moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content u.change-settings-button:hover,
+    #moove_gdpr_cookie_info_bar span[data-href]>u.change-settings-button,
+    #moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton.focus-g,
+    #moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton.focus-g,
+    #moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.focus-g,
+    #moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.focus-g,
+    #moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content span.change-settings-button.focus-g,
+    #moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content u.change-settings-button.focus-g {
+        color: #0c4da2
+    }
+
+    #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li.menu-item-selected a,
+    #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li.menu-item-selected button {
+        color: #000
+    }
+
+    #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li.menu-item-selected a i,
+    #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li.menu-item-selected button i {
+        color: #000
+    }
+
+    #moove_gdpr_cookie_modal.gdpr_lightbox-hide {
+        display: none
+    }
+</style>
+
+<script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://www.wra.go.ke/",
+    "name": "Jazak",
+    "headline": "Water Resources Authority",
+    "description" : "Water Resources Authority y.",
+    "inLanguage": "sr-RS",
+    "copyrightHolder": 
+          {
+          "@type": "Organization",
+          "logo": "static/assets/images/logo-main.png/assets/images/footer-logo.png",
+          "@id": "#organization",
+          "url": "",
+                        "address": {
+                                    "@type": "PostalAddress",
+                                    "addressLocality": "",
+                                    "postalCode": "21102",
+                                    "streetAddress": "",
+                                    "addressCountry": ""
+                                    },
+                                    "telephone": "+",                             
+                                    "name": ""
+                                  }
+          }
+    }
+</script>
+
+{% endblock %}
+
+{% block content %}
+
+<main class="main | js-main smooth-scroll">
+    <div class="sea">
+        <div class="sea__img-box | js-sea-box">
+            <picture>
+                <source srcset="static/assets/images/sea.webp" type="image/webp" media="(min-width: 768px)">
+                <source srcset="static/assets/images/sea-mobile.webp" type="image/webp" media="(max-width: 767px)">
+                <source srcset="static/assets/images/sea-mobile.png" type="image/png" media="(max-width: 767px)">
+                <img class="sea__img | js-sea js-image-load js-image-load-mobile" src="static/assets/images/sea.png"
+                    alt='More'>
+            </picture>
+            <picture>
+                <source srcset="static/assets/images/cloud-one-mobile.png" type="image/png" media="(max-width: 767px)">
+                <img class="cloud-one__img | js-cloud-one js-image-load js-image-load-mobile"
+                    src="static/assets/images/cloud-one.png" alt='Cloud'>
+            </picture>
+            <picture>
+                <source srcset="static/assets/images/cloud-two-mobile.png" type="image/png" media="(max-width: 767px)">
+                <img class="cloud-two__img | js-cloud-two js-image-load js-image-load-mobile"
+                    src="static/assets/images/cloud-two.png" alt='Cloud'>
+            </picture>
+            <picture>
+                <source srcset="static/assets/images/cloud-three-mobile.png" type="image/png"
+                    media="(max-width: 767px)">
+                <img class="cloud-three__img | js-cloud-three js-image-load" src="static/assets/images/cloud-one.png"
+                    alt='Cloud'>
+            </picture>
+            <picture>
+                <source srcset="static/assets/images/cloud-two-mobile.png" type="image/png" media="(max-width: 767px)">
+                <img class="cloud-four__img | js-cloud-four js-image-load" src="static/assets/images/cloud-two.png"
+                    alt='Cloud'>
+            </picture>
+            <div class="sea__text sea__text--one | js-sea-text">
+                <div class="sea__text-one | js-text">
+                    Water Resources authority<br>We have a catchy staement here <br>........</div>
+                <div class="sea__text-break sea__text-break--one">
+                    <div class="sea__text-dot | js-dot" data-class="show-first"></div>
+                    <div class="sea__text-line"></div>
+                    <div class="sea__text-dot | js-dot" data-class="show-second" data-target="js-sea-text-trigger-two">
+                    </div>
+                </div>
+                <div class="sea__text-two">
+                    We protect and regulate your water resources withing our homeland, <br> keeping climate
+                    change in mind <br> The </div>
+            </div>
+            <div class="rocks | js-rocks">
+                <div class="rock__img-box-zero | js-rock-box-zero">
+                    <picture>
+                        <source srcset="static/assets/images/rock-zero.webp" type="image/webp"
+                            media="(min-width: 768px)">
+                        <source srcset="static/assets/images/rock-zero-mobile.webp" type="image/webp"
+                            media="(max-width: 767px)">
+                        <source srcset="static/assets/images/rock-zero-mobile.png" type="image/png"
+                            media="(max-width: 767px)">
+                        <img class="rock__img-zero | js-rock-zero js-image-load js-image-load-mobile"
+                            src="static/assets/images/rock-zero.png" alt='
+                        The wall'>
+                    </picture>
+                </div>
+                <div class="rock__img-box-one | js-rock-box-one">
+                    <picture>
+                        <source srcset="static/assets/images/rock-one.webp" type="image/webp"
+                            media="(min-width: 768px)">
+                        <source srcset="static/assets/images/rock-one-mobile.webp" type="image/webp"
+                            media="(max-width: 767px)">
+                        <source srcset="static/assets/images/rock-one-mobile.png" type="image/png"
+                            media="(max-width: 767px)">
+                        <img class="rock__img-one | js-rock-one js-image-load js-image-load-mobile"
+                            src="static/assets/images/rock-one.png" alt='The wall'>
+                    </picture>
+                </div>
+                <div class="rock__img-box-two | js-rock-box-two">
+                    <picture>
+                        <source srcset="static/assets/images/rock-two.webp" type="image/webp"
+                            media="(min-width: 768px)">
+                        <source srcset="static/assets/images/rock-two-mobile.webp" type="image/webp"
+                            media="(max-width: 767px)">
+                        <source srcset="static/assets/images/rock-two-mobile.png" type="image/png"
+                            media="(max-width: 767px)">
+                        <img class="rock__img-two | js-rock-two" src="static/assets/images/rock-two.png" alt='The wall'>
+                    </picture>
+                </div>
+                <div class="rock__img-box-three | js-rock-box-three">
+                    <picture>
+                        <source srcset="static/assets/images/rock-three.webp" type="image/webp"
+                            media="(min-width: 768px)">
+                        <source srcset="static/assets/images/rock-three-mobile.webp" type="image/webp"
+                            media="(max-width: 767px)">
+                        <source srcset="static/assets/images/rock-three-mobile.png" type="image/png"
+                            media="(max-width: 767px)">
+                        <img class="rock__img-three | js-rock-three js-image-load js-image-load-mobile"
+                            src="static/assets/images/rock-three.png" alt='The wall'>
+                    </picture>
+                </div>
+                <div class="rock__img-box-four | js-rock-box-four">
+                    <picture>
+                        <source srcset="static/assets/images/rock-four.webp" type="image/webp"
+                            media="(min-width: 768px)">
+                        <source srcset="static/assets/images/vitaminska-leaf-one.png" type="image/png"
+                            media="(max-width: 767px)">
+                        <img class="rock__img-four | js-rock-four js-image-load js-image-load-mobile"
+                            src="static/assets/images/rock-four.png" alt='The wall'>
+                    </picture>
+                </div>
+                <div class="rock__img-box-five | js-rock-box-five">
+                    <picture>
+                        <source srcset="static/assets/images/rock-five.webp" type="image/webp"
+                            media="(min-width: 768px)">
+                        <source srcset="static/assets/images/vitaminska-leaf-one.png" type="image/png"
+                            media="(max-width: 767px)">
+                        <img class="rock__img-five | js-rock-five js-image-load"
+                            src="static/assets/images/rock-five.png" alt='The wall'>
+                    </picture>
+                </div>
+                <div class="rock__img-box-six | js-rock-box-six">
+                    <picture>
+                        <source srcset="static/assets/images/rock-six.webp" type="image/webp"
+                            media="(min-width: 768px)">
+                        <source srcset="static/assets/images/vitaminska-leaf-one.png" type="image/png"
+                            media="(max-width: 767px)">
+                        <img class="rock__img-six | js-rock-six js-image-load" src="static/assets/images/rock-six.png"
+                            alt='The wall'>
+                    </picture>
+                </div>
+                <div class="rock__img-box-seven | js-rock-box-seven">
+                    <picture>
+                        <source srcset="static/assets/images/rock-seven.webp" type="image/webp"
+                            media="(min-width: 768px)">
+                        <source srcset="static/assets/images/vitaminska-leaf-one.png" type="image/png"
+                            media="(max-width: 767px)">
+                        <img class="rock__img-seven | js-rock-seven js-image-load"
+                            src="static/assets/images/rock-seven.png" alt='The wall'>
+                    </picture>
+                </div>
+                <div class="rock__img-box-eight | js-rock-box-eight">
+                    <picture>
+                        <source srcset="static/assets/images/rock-eight.webp" type="image/webp"
+                            media="(min-width: 768px)">
+                        <source srcset="static/assets/images/vitaminska-leaf-one.png" type="image/png"
+                            media="(max-width: 767px)">
+                        <img class="rock__img-eight | js-rock-eight js-image-load"
+                            src="static/assets/images/rock-eight.png" alt='The wall'>
+                    </picture>
+                </div>
+                <div class="rock__img-box-nine | js-rock-box-nine">
+                    <picture>
+                        <source srcset="static/assets/images/rock-nine.webp" type="image/webp"
+                            media="(min-width: 768px)">
+                        <source srcset="static/assets/images/vitaminska-leaf-one.png" type="image/png"
+                            media="(max-width: 767px)">
+                        <img class="rock__img-nine | js-rock-nine js-image-load"
+                            src="static/assets/images/rock-nine.png" alt='The wall'>
+                    </picture>
+                </div>
+                <div class="rock__img-box-ten | js-rock-box-ten">
+                    <picture>
+                        <source srcset="static/assets/images/rock-ten.webp" type="image/webp"
+                            media="(min-width: 768px)">
+                        <source srcset="static/assets/images/vitaminska-leaf-one.png" type="image/png"
+                            media="(max-width: 767px)">
+                        <img class="rock__img-ten | js-rock-ten js-image-load" src="static/assets/images/rock-ten.png"
+                            alt='The wall'>
+                    </picture>
+                </div>
+                <div class="rock__img-box-elewen | js-rock-box-elewen">
+                    <picture>
+                        <source srcset="static/assets/images/rock-elewen.webp" type="image/webp"
+                            media="(min-width: 768px)">
+                        <source srcset="static/assets/images/vitaminska-leaf-one.png" type="image/png"
+                            media="(max-width: 767px)">
+                        <img class="rock__img-elewen | js-rock-elewen js-image-load"
+                            src="static/assets/images/rock-elewen.png" alt='The wall'>
+                    </picture>
+                </div>
+                <div class="rock__img-box-twelve | js-rock-box-twelve">
+                    <picture>
+                        <source srcset="static/assets/images/rock-twelve.webp" type="image/webp"
+                            media="(min-width: 768px)">
+                        <source srcset="static/assets/images/vitaminska-leaf-one.png" type="image/png"
+                            media="(max-width: 767px)">
+                        <img class="rock__img-twelve | js-rock-twelve js-image-load"
+                            src="static/assets/images/rock-twelve.png" alt='The wall'>
+                    </picture>
+                </div>
+                <div class="rock__img-box-thirteen | js-rock-box-thirteen">
+                    <picture>
+                        <source srcset="static/assets/images/rock-thirteen.webp" type="image/webp"
+                            media="(min-width: 768px)">
+                        <img class="rock__img-thirteen | js-rock-thirteen js-image-load-mobile"
+                            src="static/assets/images/rock-thirteen.png" alt='The wall'>
+                    </picture>
+                </div>
+                <div class="rock__img-box-fourteen | js-rock-box-fourteen">
+                    <picture>
+                        <source srcset="static/assets/images/rock-fourteen.webp" type="image/webp"
+                            media="(min-width: 768px)">
+                        <img class="rock__img-fourteen | js-rock-fourteen js-image-load-mobile"
+                            src="static/assets/images/rock-fourteen.png" alt='The wall'>
+                    </picture>
+                </div>
+            </div>
+            <div class="sky__box | js-sky-box">
+                <picture>
+                    <source srcset="static/assets/images/sky.webp" type="image/webp" media="(min-width: 768px)">
+                    <source srcset="static/assets/images/sky-mobile.webp" type="image/webp" media="(max-width: 767px)">
+                    <source srcset="static/assets/images/sky-mobile.png" type="image/png" media="(max-width: 767px)">
+                    <img class="sky__img | js-sky-img js-image-load js-image-load-mobile"
+                        src="static/assets/images/sky.png" alt='Or'>
+                </picture>
+            </div>
+            <div class="clouds__box | js-clouds-box">
+                <picture>
+                    <source srcset="static/assets/images/vitaminska-leaf-one.png" type="image/png"
+                        media="(max-width: 767px)">
+                    <img class="clouds__img | js-clouds-img js-image-load" src="static/assets/images/clouds.png"
+                        alt='Clouds'>
+                </picture>
+            </div>
+            <div class="sea__text sea__text-rocks | js-rock-text">
+                <div class="sea__text-one | js-text">
+                    Protecting water resources is a..<br>its unrepeatable <br> and has an ... </div>
+                <div class="sea__text-break sea__text-break--one">
+                    <div class="sea__text-dot | js-dot-rock" data-class="show-first"
+                        data-target="js-rock-text-trigger-one"></div>
+                    <div class="sea__text-line"></div>
+                    <div class="sea__text-dot | js-dot-rock" data-class="show-second"
+                        data-target="js-rock-text-trigger-two"></div>
+                </div>
+                <div class="sea__text-two">
+                    Water being a scarce resource is a fundamental <br> d <br> its unsurpassed, crystalline
+                    purity. </div>
+            </div>
+        </div>
+    </div>
+    <div class="sea-text__triggers">
+        <div class="sea-text__trigge-two | js-sea-text-trigger-two"></div>
+        <div class="sea-text__trigge-three | js-sea-text-trigger-three"></div>
+        <div class="sea-text__trigge-four | js-sea-text-trigger-four"></div>
+    </div>
+    <div class="sea-trigger | js-sea-trigger"></div>
+    <div class="rock-triggers">
+        <div class="rock-trigger-zero | js-rock-trigger-zero"></div>
+        <div class="rock-trigger-one | js-rock-trigger-one"></div>
+        <div class="rock-trigger-two | js-rock-trigger-two"></div>
+        <div class="rock-trigger-three | js-rock-trigger-three"></div>
+        <div class="rock-trigger-four | js-rock-trigger-four"></div>
+        <div class="rock-trigger-five | js-rock-trigger-five"></div>
+        <div class="rock-trigger-six | js-rock-trigger-six"></div>
+        <div class="rock-trigger-seven | js-rock-trigger-seven"></div>
+        <div class="rock-trigger-eight | js-rock-trigger-eight"></div>
+        <div class="rock-trigger-nine | js-rock-trigger-nine"></div>
+        <div class="rock-trigger-ten | js-rock-trigger-ten"></div>
+        <div class="rock-trigger-elewen | js-rock-trigger-elewen"></div>
+        <div class="rock-trigger-twelve | js-rock-trigger-twelve"></div>
+        <div class="rock-trigger-thirteen | js-rock-trigger-thirteen"></div>
+        <div class="rock-trigger-fourteen | js-rock-trigger-fourteen"></div>
+        <div class="sky-trigger | js-sky-trigger"></div>
+        <div class="rock-text-trigger-one | js-rock-text-trigger-one"></div>
+        <div class="clouds-trigger | js-clouds-trigger"></div>
+        <div class="rock-text-trigger-two | js-rock-text-trigger-two"></div>
+        <div class="rock-text-trigger-three | js-rock-text-trigger-three"></div>
+        <div class="rock-sound-one | js-rock-sound-one"></div>
+        <div class="rock-sound-two | js-rock-sound-two"></div>
+        <div class="rock-sound-three | js-rock-sound-three"></div>
+    </div>
+    <div class="bushes | js-bushes">
+        <div class="bushes__box | js-bushes-box">
+            <div class="sea__text sea__text-bushes | js-bushes-text">
+                <div class="sea__text-one | js-text">
+                    Starting from the mountains and all the way <br> to the sea <br> .....</div>
+                <div class="sea__text-break sea__text-break--one">
+                    <div class="sea__text-dot | js-dot-bush" data-class="show-first"
+                        data-target="js-bush-text-trigger-one"></div>
+                    <div class="sea__text-line"></div>
+                    <div class="sea__text-dot | js-dot-bush" data-class="show-second"
+                        data-target="js-bush-text-trigger-two"></div>
+                </div>
+                <div class="sea__text-two">
+
+                    Mau Forest is a unique ecosystem, <br> and it gives water to man <br> that magic of
+                    nature, to its last drop.</div>
+            </div>
+            <picture>
+                <source srcset="static/assets/images/bushes.webp" type="image/webp" media="(min-width: 768px)">
+                <source srcset="static/assets/images/bushes-mobile.webp" type="image/webp" media="(max-width: 767px)">
+                <source srcset="static/assets/images/bushes-mobile.png" type="image/png" media="(max-width: 767px)">
+                <img class="bushes__img | js-bushes-img js-image-load js-image-load-mobile"
+                    src="static/assets/images/bushes.png" alt='Undergrowth'>
+            </picture>
+            <picture>
+                <source srcset="static/assets/images/jungle.webp" type="image/webp" media="(min-width: 768px)">
+                <source srcset="static/assets/images/jungle-mobile.webp" type="image/webp" media="(max-width: 767px)">
+                <source srcset="static/assets/images/jungle-mobile.png" type="image/png" media="(max-width: 767px)">
+                <img class="jungle__img | js-jungle-img js-image-load js-image-load-mobile"
+                    src="static/assets/images/jungle.png" alt='The jungle'>
+            </picture>
+            <picture>
+                <source srcset="static/assets/images/tree.webp" type="image/webp" media="(min-width: 768px)">
+                <source srcset="static/assets/images/vitaminska-leaf-one.png" type="image/png"
+                    media="(max-width: 767px)">
+                <img class="tree__img | js-tree-img js-image-load" src="static/assets/images/tree.png" alt='Wood'>
+            </picture>
+            <picture>
+                <source srcset="static/assets/images/fern.webp" type="image/webp" media="(min-width: 768px)">
+                <source srcset="static/assets/images/vitaminska-leaf-one.png" type="image/png"
+                    media="(max-width: 767px)">
+                <img class="fern__img | js-fern-img js-image-load" src="static/assets/images/fern.png" alt='Fern'>
+            </picture>
+            <div class="left-bush__box | js-left-bush-box">
+                <picture>
+                    <source srcset="static/assets/images/left-bush.webp" type="image/webp" media="(min-width: 768px)">
+                    <source srcset="static/assets/images/left-bush-mobile.webp" type="image/webp"
+                        media="(max-width: 767px)">
+                    <source srcset="static/assets/images/left-bush-mobile.png" type="image/png"
+                        media="(max-width: 767px)">
+                    <img class="left-bush__img | js-left-bush-img js-image-load js-image-load-mobile"
+                        src="static/assets/images/left-bush.png" alt='Water'>
+                </picture>
+            </div>
+            <picture>
+                <source srcset="static/assets/images/right-bush.webp" type="image/webp" media="(min-width: 768px)">
+                <source srcset="static/assets/images/right-bush-mobile.webp" type="image/webp"
+                    media="(max-width: 767px)">
+                <source srcset="static/assets/images/right-bush-mobile.png" type="image/png" media="(max-width: 767px)">
+                <img class="right-bush__img | js-right-bush-img js-image-load js-image-load-mobile"
+                    src="static/assets/images/right-bush.png" alt='Water'>
+            </picture>
+        </div>
+        <div class="bushes__trigger-pin | js-bushes-trigger-pin"></div>
+        <div class="bushes__trigger | js-bushes-trigger"></div>
+        <div class="bushes__text-trigger-one | js-bush-text-trigger-one"></div>
+        <div class="bushes__text-trigger-two | js-bush-text-trigger-two"></div>
+        <div class="bushes__text-trigger-three | js-bush-text-trigger-three"></div>
+        <div class="bushes__text-trigger-four | js-bush-text-trigger-four"></div>
+        <div class="tree__trigger | js-tree-trigger"></div>
+        <div class="fern__trigger | js-fern-trigger"></div>
+        <div class="left-bush__trigger | js-left-bush-trigger"></div>
+        <div class="right-bush__trigger | js-right-bush-trigger"></div>
+        <div class="forest-sound-trigger-one | js-forest-sound-trigger-one"></div>
+        <div class="forest-sound-trigger-two | js-forest-sound-trigger-two"></div>
+        <div class="forest-sound-trigger-three | js-forest-sound-trigger-three"></div>
+        <div class="forest-sound-trigger-four | js-forest-sound-trigger-four"></div>
+        <div class="left-bush__trigger-reverse | js-left-bush-trigger-reverse"></div>
+    </div>
+    <div class="content-fix | js-content-fix">
+        <div class="content | js-content" style="background-image: url('static/assets/images/background2.jpg')">
+            <div class="content__overlay">
+            </div>
+            <div class="banner">
+                <div class="branch-two__trigger | js-branch-two-trigger"></div>
+
+                <div class="banner__hero">
+                    <div class="banner-hero__img-front-box">
+                        <picture>
+                            <source srcset="static/assets/images/hero-front-mobile.png" type="image/png"
+                                media="(max-width: 767px)">
+                            <img class="banner-hero__img-front | js-image-load js-image-load-mobile"
+                                src="static/assets/images/hero-front.png" alt='Water'>
+                        </picture>
+                        <div class="banner-hero__img-front-water"
+                            style="background-image: url('static/assets/images/hero-front-water.png')">
+                        </div>
+                    </div>
+                    <svg class="water-svg">
+                        <filter id="turbulence" x="0" y="0" width="100%" height="100%">
+                            <feTurbulence id="sea-filter" numOctaves="1" seed="2" baseFrequency="0.02 0.05">
+                            </feTurbulence>
+                            <feDisplacementMap in2="turbulence" scale="30" in="SourceGraphic">
+                            </feDisplacementMap>
+                            <animate xlink:href="#sea-filter" attributeName="baseFrequency" dur="60s" keyTimes="0;0.5;1"
+                                values="0.02 0.25;0.02 0.55;0.02 0.25" repeatCount="indefinite" />
+                        </filter>
+                    </svg>
+                    <picture>
+
+                        <source srcset="static/assets/images/hero-back.webp" type="image/webp"
+                            media="(min-width: 768px)">
+                        <source srcset="static/assets/images/vitaminska-leaf-one.png" type="image/png"
+                            media="(max-width: 767px)">
+                        <img class="banner-hero__img-back | js-image-load" src="static/assets/images/hero-back.png"
+                            alt='Water'>
+                    </picture>
+                    <div class="banner-hero__clouds">
+                        <img class="banner-hero__img-clouds | js-hero-cloud-one js-image-load"
+                            src="static/assets/images/hero-clouds.png" alt='Oblaci'>
+                        <img class="banner-hero__img-clouds-two | js-hero-cloud-two"
+                            src="static/assets/images/hero-clouds.png" alt='Clouds'>
+                    </div>
+                </div>
+                <div class="banner-bush__box | js-banner-bush-box">
+                    <img class="banner-branch-right__img | js-banner-branch-two js-image-load"
+                        src="static/assets/images/banner-branch-right.png" alt='Water'>
+                    <img class="banner-branch-left__img | js-banner-branch-one js-image-load"
+                        src="static/assets/images/banner-branch-left.png" alt='Water'>
+                    <picture>
+                        <source srcset="static/assets/images/banner-bush-mobile.png" type="image/png"
+                            media="(max-width: 767px)">
+                        <img class="banner-bush__img | js-banner-bush js-image-load js-image-load-mobile"
+                            src="static/assets/images/banner-bush.png" alt='Water'>
+                    </picture>
+                </div>
+                <div class="banner__leafs">
+
+                    <img class="banner__butterfly | js-banner-butterfly" src="#"
+                        data-src="static/assets/images/butterfly.gif" alt='Butterflies'>
+                </div>
+                <picture>
+                    <source srcset="static/assets/images/banner-tree-left.webp" type="image/webp"
+                        media="(min-width: 768px)">
+                    <source srcset="static/assets/images/banner-tree-left-mobile.png" type="image/png"
+                        media="(max-width: 767px)">
+                    <img class="banner-tree-left__img | js-banner-tree-left js-image-load js-image-load-mobile"
+                        src="static/assets/images/banner-tree-left.png" alt='Water'>
+                </picture>
+                <picture>
+                    <source srcset="static/assets/images/banner-tree-right.webp" type="image/webp"
+                        media="(min-width: 768px)">
+                    <source srcset="static/assets/images/banner-tree-right-mobile.png" type="image/png"
+                        media="(max-width: 767px)">
+                    <img class="banner-tree-right__img | js-banner-tree-right js-image-load js-image-load-mobile"
+                        src="static/assets/images/banner-tree-right.png" alt='Water'>
+                </picture>
+                <img class="banner-waterfall | js-gif" src="#" data-src="static/assets/images/waterfall.gif"
+                    alt="waterfall" alt='waterfall'>
+                <!-- <img class="banner-logo__img | js-banner-logo js-image-load" src="static/assets/images/banner-logo.png" alt='Jazak logo'> -->
+                <img class="simbol__img | js-simbol js-image-load" src="static/assets/images/simbol.png" alt='Symbol'>
+            </div>
+            <div class="about-text about-text--one | js-about-one">
+                <div class="about-text__leafs | js-about-leafs">
+                    <img class="about-text__leafs-one | js-about-leaf-one js-image-load"
+                        src="static/assets/images/about-leaf-one.png" alt='List'>
+                    <img class="about-text__leafs-two | js-about-leaf-two js-image-load"
+                        src="static/assets/images/about-leaf-two.png" alt='List'>
+                    <img class="about-text__leafs-three | js-about-leaf-three js-image-load"
+                        src="static/assets/images/about-leaf-three.png" alt='List'>
+                    <img class="about-text__leafs-four | js-about-leaf-four js-image-load"
+                        src="static/assets/images/about-leaf-four.png" alt='List'>
+                    <img class="about-text__leafs-five | js-about-leaf-five js-image-load"
+                        src="static/assets/images/about-leaf-five.png" alt='List'>
+                    <img class="about-text__leafs-six | js-about-leaf-six js-image-load"
+                        src="static/assets/images/about-leaf-six.png" alt='List'>
+                    <img class="about-text__leafs-seven | js-about-leaf-seven js-image-load"
+                        src="static/assets/images/about-leaf-seven.png" alt='List'>
+                    <img class="about-text__leafs-eight | js-about-leaf-eight js-image-load"
+                        src="static/assets/images/about-leaf-eight.png" alt='List'>
+                </div>
+                <div class="about-text__inner">
+                    <div class="hotspot hotspot--about | js-hotspot">
+                        <div class="hotspot__indicator | js-hotspot-indicator">
+                            <svg width="47" height="47" viewBox="0 0 47 47" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <circle class="hotspot__indicator-center" cx="24" cy="23" r="9" fill="#CE5E2C" />
+                                <circle class="hotspot__indicator-small" cx="23.5" cy="23.5" r="17" stroke="#CE5E2C" />
+                                <circle class="hotspot__indicator-big" cx="23.5" cy="23.5" r="23" stroke="#CE5E2C" />
+                                <g class="hotspot__indicator-close">
+                                    <path d="M19.5 18.5L28.5 27.5" stroke="black" stroke-width="2" />
+                                    <path d="M28.5 18.5L19.5 27.5" stroke="black" stroke-width="2" />
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="hotspot__content">
+                            Even in the time of the dinosaurs and the Tethys Proto-Ocean, the story of the
+                            Jazak water begins. This climate has been changing for millennia, and the Jazak
+                            water has witnessed all these powerful changes and hidden in the heart of
+                            today's Fruška gora, patiently waiting for its moment.  </div>
+                    </div>
+                    <div class="about-text__left">
+                        <h3 class="about-text__heading qanelas-28-bold | js-about-heading">
+                            Naturally <br> good water </h3>
+                    </div>
+                    <div class="about-text__right cream-16-normal | js-about-right">
+                        <p>Rarely does nature endow such a pure and untouched treasure as the natural spring
+                            water. Born in the heart of our oldest national park, it preserves the history
+                            of an inexhaustible glacier trapped in the rocks for thousands of years.</p>
+                        <p>It carries the magical alchemy of a protected ecosystem, and all the secrets of
+                            the Mau Escarpment. That is why this water is not ordinary water, it is the only
+                            source of magical nature.</p>
+                    </div>
+                </div>
+                <picture>
+                    <source srcset="static/assets/images/about3-text.png" type="image/png" media="(min-width: 768px)">
+                    <source srcset="static/assets/images/about-text-mobile.png" type="image/png"
+                        media="(max-width: 767px)">
+                    <img class="about-text__img | js-image-load js-image-load-mobile"
+                        src="static/assets/images/about3-text.png" alt='Water'>
+                </picture>
+                <img class="about-text__branch | js-about-text-branch js-image-load"
+                    src="static/assets/images/about-text-branch.png" alt='Water'>
+            </div>
+            <div class="negazirana">
+                <picture>
+                    <source srcset="static/assets/images/negazirana-bush-left.webp" type="image/webp"
+                        media="(min-width: 768px)">
+                    <source srcset="static/assets/images/negazirana-bush-left-mobile.webp" type="image/webp"
+                        media="(max-width: 767px)">
+                    <source srcset="static/assets/images/negazirana-bush-left-mobile.png" type="image/png"
+                        media="(max-width: 767px)">
+                    <img class="negazirana__bush-left | js-image-load js-image-load-mobile"
+                        src="static/assets/images/negazirana-bush-left.png" alt='Water'>
+                </picture>
+                <picture>
+                    <source srcset="static/assets/images/negazirana-bush-right.webp" type="image/webp">
+                    <img class="negazirana__bush-right | js-image-load js-image-load-mobile"
+                        src="static/assets/images/negazirana-bush-right.png" alt='Water'>
+                </picture>
+                <picture>
+                    <source srcset="static/assets/images/negazirana-bush-bottom.webp" type="image/webp"
+                        media="(min-width: 768px)">
+                    <source srcset="static/assets/images/negazirana-bush-bottom-mobile.webp" type="image/webp"
+                        media="(max-width: 767px)">
+                    <source srcset="static/assets/images/negazirana-bush-bottom-mobile.png" type="image/png"
+                        media="(max-width: 767px)">
+                    <img class="negazirana__bush-bottom | js-image-load js-image-load-mobile"
+                        src="static/assets/images/negazirana-bush-bottom.png" alt='Water'>
+                </picture>
+                <picture>
+                    <source srcset="static/assets/images/negazirana-rock.webp" type="image/webp">
+                    <img class="negazirana__rock | js-image-load js-image-load-mobile"
+                        src="static/assets/images/negazirana-rock.png" alt='Stone'>
+                </picture>
+                <img class="negazirana__waterfall | js-gif" src="#"
+                    data-src="static/assets/images/negazirana-waterfall.gif" alt='Waterfall'>
+                <img class="negazirana__waterfall-mobile | js-image-load-mobile"
+                    src="static/assets/images/negazirana-waterfall.png" alt='Waterfall'>
+                <img class="negazirana__branch | js-image-load" src="static/assets/images/negazirana-branch.png"
+                    alt='Water'>
+                <div class='negazirana__slider | js-slider'>
+                    <div class="negazirana__slider-left | js-slider-left">
+                        <svg width="31" height="55" viewBox="0 0 31 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M29.0996 1C25.6996 12.7 13.9996 21 1.99961 27.5C12.3996 34 25.3996 42.7 29.0996 54"
+                                stroke="#2995D3" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <div class="negazirana__slider-right | js-slider-right">
+                        <svg width="31" height="55" viewBox="0 0 31 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 54C4.4 42.3 16.1 34 28.1 27.5C17.7 21 4.7 12.3 1 1" stroke="#2995D3"
+                                stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <div class="negazirana__slider-leafs | js-slider-leafs">
+                        <img class="negazirana__slider-leaf-one | js-image-load"
+                            src="static/assets/images/negazirana-leaf-one.png" alt='List'>
+                        <img class="negazirana__slider-leaf-two | js-image-load"
+                            src="static/assets/images/negazirana-leaf-two.png" alt='List'>
+                        <img class="negazirana__slider-leaf-three | js-image-load"
+                            src="static/assets/images/negazirana-leaf-three.png" alt='List'>
+                        <img class="negazirana__slider-leaf-four | js-image-load"
+                            src="static/assets/images/negazirana-leaf-four.png" alt='List'>
+                        <img class="negazirana__slider-leaf-five | js-image-load"
+                            src="static/assets/images/negazirana-leaf-five.png" alt='List'>
+                        <img class="negazirana__slider-leaf-six | js-image-load"
+                            src="static/assets/images/negazirana-leaf-six.png" alt='List'>
+                        <img class="negazirana__slider-leaf-seven | js-image-load"
+                            src="static/assets/images/negazirana-leaf-seven.png" alt='List'>
+                    </div>
+
+
+
+                    <div class="negazirana__slider-slide active srednja | js-slider-slide">
+
+                        <div class="negazirana__slider-slide active srednja | js-slider-slide">
+                            <div class='negazirana__slider-inner'>
+                                <img class="negazirana__bottle  | js-image-load"
+                                    src="static/uploads/2021/02/1500ml-Negazirana-min.png" alt=""
+                                    title="1500ml Negazirana-min">
+                            </div>
+                            <div class="negazirana__slider-title">negazirana <br> 1,5 l</div>
+                        </div>
+
+
+                        <div class="negazirana__slider-slide  srednja | js-slider-slide">
+                            <div class='negazirana__slider-inner'>
+                                <img class="negazirana__bottle  | js-image-load"
+                                    src="static/uploads/2021/02/1500ml-Gazirana-min.png" alt=""
+                                    title="1500ml Gazirana-min">
+                            </div>
+                            <div class="negazirana__slider-title">gazirana <br> 1,5 l</div>
+                        </div>
+
+
+                        <div class="negazirana__slider-slide  mala | js-slider-slide">
+                            <div class='negazirana__slider-inner'>
+                                <img class="negazirana__bottle  | js-image-load"
+                                    src="static/uploads/2021/02/negazirana.png" alt="" title="negazirana">
+                            </div>
+                            <div class="negazirana__slider-title">negazirana <br> 0,5 l</div>
+                        </div>
+
+
+                        <div class="negazirana__slider-slide  mala | js-slider-slide">
+                            <div class='negazirana__slider-inner'>
+                                <img class="negazirana__bottle  | js-image-load"
+                                    src="static/uploads/2021/02/gazirana.png" alt="" title="gazirana">
+                            </div>
+                            <div class="negazirana__slider-title">gazirana <br> 0,5 l</div>
+                        </div>
+
+
+                        <div class="negazirana__slider-slide  velika | js-slider-slide">
+                            <div class='negazirana__slider-inner'>
+                                <img class="negazirana__bottle  | js-image-load"
+                                    src="static/uploads/2021/03/jazak-voda-5-l.pn" alt="" title="jazak-voda-5-l">
+                            </div>
+                            <div class="negazirana__slider-title">negazirana <br> 5l</div>
+                        </div>
+
+
+                    </div>
+                    <div class="hotspot hotspot--negazirana | js-hotspot">
+                        <div class="hotspot__indicator | js-hotspot-indicator">
+                            <svg width="47" height="47" viewBox="0 0 47 47" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <circle class="hotspot__indicator-center" cx="24" cy="23" r="9" fill="#CE5E2C" />
+                                <circle class="hotspot__indicator-small" cx="23.5" cy="23.5" r="17" stroke="#CE5E2C" />
+                                <circle class="hotspot__indicator-big" cx="23.5" cy="23.5" r="23" stroke="#CE5E2C" />
+                                <g class="hotspot__indicator-close">
+                                    <path d="M19.5 18.5L28.5 27.5" stroke="black" stroke-width="2" />
+                                    <path d="M28.5 18.5L19.5 27.5" stroke="black" stroke-width="2" />
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="hotspot__content">
+                            Uzimajući od egzotičnih mora i drevnih okeana ono najplemenitije,
+                            krečnjačko-dolomitske stene su se taložile milionima godina i podarile vodi
+                            Jazak njenu kristalnu čistoću, nizak sadržaj natrijuma i gotovo savršenu
+                            harmoniju minerala.
+                        </div>
+                    </div>
+                </div>
+                <div class="about-text about-text--two">
+                    <div class="about-text__leafs | js-about2-leafs">
+                        <img class="about2-text__leafs-one | js-image-load"
+                            src="static/assets/images/about-leaf-one.png" alt='List'>
+                        <img class="about2-text__leafs-two | js-image-load"
+                            src="static/assets/images/about-leaf-two.png" alt='List'>
+                        <img class="about2-text__leafs-three | js-image-load"
+                            src="static/assets/images/about-leaf-three.png" alt='List'>
+                        <img class="about2-text__leafs-four | js-image-load"
+                            src="static/assets/images/about-leaf-four.png" alt='List'>
+                        <img class="about2-text__leafs-five | js-image-load"
+                            src="static/assets/images/about-leaf-five.png" alt='List'>
+                        <img class="about2-text__leafs-six | js-image-load"
+                            src="static/assets/images/about-leaf-six.png" alt='List'>
+                        <img class="about2-text__leafs-seven | js-image-load"
+                            src="static/assets/images/about-leaf-seven.png" alt='List'>
+                        <img class="about2-text__leafs-eight | js-image-load"
+                            src="static/assets/images/about-leaf-eight.png" alt='List'>
+                    </div>
+                    <div class="about-text__inner">
+                        <div class="about-text__left">
+                            <h3 class="about-text__heading qanelas-28-bold | js-about2-heading">
+                                Harmonija <br> na dohvat ruke
+                            </h3>
+                        </div>
+                        <div class="about-text__right cream-16-normal | js-about2-right">
+                            <p>Jazak voda, kao prirodna izvorska voda, dolazi do nas bistra i kristalno
+                                čista.</p>
+                            <p>Prolaskom kroz krečnjačko-dolomitske stene, u Jazak vodi odvija se čarobna
+                                alhemija minerala, koja ostavlja malu količinu natrijuma i optimalnu pH
+                                vrednost.</p>
+                            <p>Upravo ta magija čini Jazak vodu pogodnom za svakodnevnu konzumaciju.</p>
+
+                        </div>
+                    </div>
+                    <picture>
+                        <source srcset="static/assets/images/about2-text.webp" type="image/webp"
+                            media="(min-width: 768px)">
+                        <source srcset="static/assets/images/about2-text-mobile.webp" type="image/webp"
+                            media="(max-width: 767px)">
+                        <source srcset="static/assets/images/about2-text-mobile.png" type="image/png"
+                            media="(max-width: 767px)">
+                        <img class="about2-text__img | js-image-load js-image-load-mobile"
+                            src="static/assets/images/about2-text.png" alt='Zbunje'>
+                    </picture>
+                    <picture>
+                        <source srcset="static/assets/images/about2-text2-mobile.png" type="image/png"
+                            media="(max-width: 767px)">
+                        <img class="about2-text__img2 | js-image-load js-image-load-mobile"
+                            src="static/assets/images/about2-text2.png" alt='Zbunje'>
+                    </picture>
+
+                </div>
+                <div class="stream">
+                    <div class="vitaminska-trigger-mobile | js-vitaminska-target-mobile"></div>
+                    <picture>
+                        <source srcset="static/assets/images/stream.webp" type="image/webp" media="(min-width: 768px)">
+                        <source srcset="static/assets/images/stream-mobile.webp" type="image/webp"
+                            media="(max-width: 767px)">
+                        <source srcset="static/assets/images/stream-mobile.png" type="image/png"
+                            media="(max-width: 767px)">
+                        <img class="stream__img | js-image-load js-image-load-mobile"
+                            src="static/assets/images/stream.png" alt='Potok'>
+                    </picture>
+                    <div class="hotspot hotspot--stream | js-hotspot">
+                        <div class="hotspot__indicator | js-hotspot-indicator">
+                            <svg width="47" height="47" viewBox="0 0 47 47" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <circle class="hotspot__indicator-center" cx="24" cy="23" r="9" fill="#CE5E2C" />
+                                <circle class="hotspot__indicator-small" cx="23.5" cy="23.5" r="17" stroke="#CE5E2C" />
+                                <circle class="hotspot__indicator-big" cx="23.5" cy="23.5" r="23" stroke="#CE5E2C" />
+                                <g class="hotspot__indicator-close">
+                                    <path d="M19.5 18.5L28.5 27.5" stroke="black" stroke-width="2" />
+                                    <path d="M28.5 18.5L19.5 27.5" stroke="black" stroke-width="2" />
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="hotspot__content">
+                            Još u vreme dinosaurusa i praokeana Tetis, počinje priča o vodi Jazak. Ovo se
+                            podneblje menjalo milenijumima, a voda Jazak je svedočila svim tim moćnim
+                            promenama i skrivena u srcu današnje Fruške gore, strpljivo čekala svoj
+                            trenutak. 
+                        </div>
+                    </div>
+                    <div class="stream-water" style="background-image: url('static/assets/images/stream-water.png')">
+                    </div>
+                    <svg class="water-svg">
+                        <filter id="turbulence2" x="0" y="0" width="100%" height="100%">
+                            <feTurbulence id="sea-filter2" numOctaves="1" seed="0" baseFrequency="0.01 0.01">
+                            </feTurbulence>
+
+                            <feDisplacementMap in2="turbulence2" in="SourceGraphic" scale="10" xChannelSelector="R"
+                                yChannelSelector="G"></feDisplacementMap>
+                            <animate xlink:href="#sea-filter2" attributeName="baseFrequency" dur="60s"
+                                keyTimes="0;0.5;1" values="0.02 0.2;0.02 0.5;0.02 0.2" repeatCount="indefinite">
+                            </animate>
+                        </filter>
+                    </svg>
+                    <picture>
+                        <source srcset="static/assets/images/stream-branch.webp" type="image/webp"
+                            media="(min-width: 768px)">
+                        <source srcset="static/assets/images/stream-branch-mobile.webp" type="image/webp"
+                            media="(max-width: 767px)">
+                        <source srcset="static/assets/images/stream-branch-mobile.png" type="image/png"
+                            media="(max-width: 767px)">
+                        <img class="stream__branch | js-image-load js-image-load-mobile"
+                            src="static/assets/images/stream-branch.png" alt='Grana'>
+                    </picture>
+                    <div class="hotspot hotspot--stream | js-hotspot">
+                        <div class="hotspot__indicator | js-hotspot-indicator">
+                            <svg width="47" height="47" viewBox="0 0 47 47" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <circle class="hotspot__indicator-center" cx="24" cy="23" r="9" fill="#CE5E2C" />
+                                <circle class="hotspot__indicator-small" cx="23.5" cy="23.5" r="17" stroke="#CE5E2C" />
+                                <circle class="hotspot__indicator-big" cx="23.5" cy="23.5" r="23" stroke="#CE5E2C" />
+                                <g class="hotspot__indicator-close">
+                                    <path d="M19.5 18.5L28.5 27.5" stroke="black" stroke-width="2" />
+                                    <path d="M28.5 18.5L19.5 27.5" stroke="black" stroke-width="2" />
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="hotspot__content">
+                            Fruška gora is a unique ecosystem and a treasure trove of flora. In our oldest
+                            national park, among thousands of species, there are 69 plants that are
+                            protected as natural rarities of Serbia. Wild, indigenous plants and remnants of
+                            fossil vegetation build extremely rich biodiversity.
+                        </div>
+                    </div>
+                    <picture>
+                        <source srcset="static/assets/images/stream-fern-one-mobile.png" type="image/png"
+                            media="(max-width: 767px)">
+                        <img class="stream__fern-one | js-image-load js-image-load-mobile"
+                            src="static/assets/images/stream-fern-one.png" alt='Paprat'>
+                    </picture>
+                    <picture>
+                        <source srcset="static/assets/images/stream-fern-two-mobile.png" type="image/png"
+                            media="(max-width: 767px)">
+                        <img class="stream__fern-two | js-image-load js-image-load-mobile"
+                            src="static/assets/images/stream-fern-two.png" alt='Paprat'>
+                    </picture>
+                </div>
+
+                <div class="vitaminska">
+                    <picture>
+                        <source srcset="static/assets/images/vitaminska-bush-bottom.webp" type="image/webp"
+                            media="(min-width: 768px)">
+                        <source srcset="static/assets/images/vitaminska-bush-bottom-mobile.webp" type="image/webp"
+                            media="(max-width: 767px)">
+                        <source srcset="static/assets/images/vitaminska-bush-bottom-mobile.png" type="image/png"
+                            media="(max-width: 767px)">
+                        <img class="vitaminska__bush-bottom | js-image-load js-image-load-mobile"
+                            src="static/assets/images/vitaminska-bush-bottom.png" alt='Zbunje'>
+                    </picture>
+                    <picture>
+                        <source srcset="static/assets/images/vitaminska-rock.webp" type="image/webp">
+                        <img class="vitaminska__rock | js-image-load js-image-load-mobile"
+                            src="static/assets/images/vitaminska-rock.png" alt='Kamen'>
+                    </picture>
+                    <picture>
+                        <source srcset="static/assets/images/vitaminska-fern.webp" type="image/webp">
+                        <img class="vitaminska__fern | js-image-load js-image-load-mobile"
+                            src="static/assets/images/vitaminska-fern.png" alt='Paprat'>
+                    </picture>
+                    <picture>
+                        <source srcset="static/assets/images/moss.webp" type="image/webp">
+                        <img class="vitaminska__moss | js-image-load js-image-load-mobile"
+                            src="static/assets/images/moss.png" alt='Mahovina'>
+                    </picture>
+                    <picture>
+                        <source srcset="static/assets/images/vitaminska-bush-left.webp" type="image/webp">
+                        <img class="vitaminska__bush-left | js-image-load js-image-load-mobile"
+                            src="static/assets/images/vitaminska-bush-left.png" alt='Zbun'>
+                    </picture>
+                    <picture>
+                        <source srcset="static/assets/images/vitaminska-bush-left.webp" type="image/webp">
+                        <img class="vitaminska__bush-right | js-image-load js-image-load-mobile"
+                            src="static/assets/images/vitaminska-bush-left.png" alt='Zbun'>
+                    </picture>
+
+                    <div class='vitaminska__slider | js-slider'>
+                        <div class="vitaminska__slider-left | js-slider-left">
+                            <svg width="31" height="55" viewBox="0 0 31 55" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M29.0996 1C25.6996 12.7 13.9996 21 1.99961 27.5C12.3996 34 25.3996 42.7 29.0996 54"
+                                    stroke="#2995D3" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <div class="vitaminska__slider-right | js-slider-right">
+                            <svg width="31" height="55" viewBox="0 0 31 55" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 54C4.4 42.3 16.1 34 28.1 27.5C17.7 21 4.7 12.3 1 1" stroke="#2995D3"
+                                    stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <div class="vitaminska__slider-leafs | js-slider-leafs">
+                            <img class="vitaminska__slider-leaf-one | js-image-load"
+                                src="static/assets/images/vitaminska-leaf-one.png" alt='List'>
+                            <img class="vitaminska__slider-leaf-two | js-image-load"
+                                src="static/assets/images/vitaminska-leaf-two.png" alt='List'>
+                            <img class="vitaminska__slider-leaf-three | js-image-load"
+                                src="static/assets/images/vitaminska-leaf-three.png" alt='List'>
+                            <img class="vitaminska__slider-leaf-four | js-image-load"
+                                src="static/assets/images/vitaminska-leaf-four.png" alt='List'>
+                            <img class="vitaminska__slider-leaf-five | js-image-load"
+                                src="static/assets/images/vitaminska-leaf-five.png" alt='List'>
+                            <img class="vitaminska__slider-leaf-six | js-image-load"
+                                src="static/assets/images/vitaminska-leaf-six.png" alt='List'>
+                            <img class="vitaminska__slider-leaf-seven | js-image-load"
+                                src="static/assets/images/vitaminska-leaf-seven.png" alt='List'>
+                        </div>
+
+
+                        <div class="vitaminska__slider-slide active | js-slider-slide">
+                            <img class="vitaminska__bottle active" src="static/assets/images/vitaminska-mandarina.png"
+                                alt="flasa" title="flasa">
+                            <img class="vitaminska__shadow" src="static/assets/images/vitaminska-shadow.png"
+                                alt='Senka'>
+                            <img class="vitaminska__madarina" src="static/assets/images/mandarina.png" alt="flasa"
+                                title="flasa">
+                            <img class="vitaminska__madarina-shadow" src="static/assets/images/mandarina-senka.png"
+                                alt='Senka'>
+                            <img class="vitaminska__madarina-limun" src="static/assets/images/limun.png" alt="flasa"
+                                title="flasa">
+                            <img class="vitaminska__madarina-limun-shadow" src="static/assets/images/limun-senka.png"
+                                alt='Senka'>
+                            <div class="vitaminska__slider-title">mandarina i limun<br> 0,5 L</div>
+                        </div>
+
+                        <div class="vitaminska__slider-slide | js-slider-slide">
+                            <img class="vitaminska__bottle " src="static/assets/images/vitaminska-zova.png" alt="flasa"
+                                title="flasa">
+
+                            <img class="vitaminska__shadow" src="static/assets/images/vitaminska-shadow.png"
+                                alt='Senka'>
+                            <img class="vitaminska__zova" src="static/assets/images/zova.png" alt="flasa" title="flasa">
+                            <img class="vitaminska__zova-shadow1" src="static/assets/images/zova-senka1.png"
+                                alt='Senka'>
+                            <img class="vitaminska__zova-shadow2" src="static/assets/images/zova-senka2.png"
+                                alt='Senka'>
+                            <img class="vitaminska__aloe-vera" src="static/assets/images/aloe-vera.png" alt="flasa"
+                                title="flasa">
+                            <img class="vitaminska__aloe-vera-shadow" src="static/assets/images/aloe-vera-senka.png"
+                                alt='Senka'>
+                            <div class="vitaminska__slider-title">zova i aloe vera<br> 0,5 L</div>
+                        </div>
+                        <div class="vitaminska__slider-slide | js-slider-slide">
+                            <img class="vitaminska__bottle " src="static/assets/images/vitaminska-breskva.png"
+                                alt="flasa" title="flasa">
+                            <img class="vitaminska__shadow" src="static/assets/images/vitaminska-shadow.png"
+                                alt='Senka'>
+                            <img class="vitaminska__breskva" src="static/assets/images/breskva.png" alt="flasa"
+                                title="flasa">
+                            <img class="vitaminska__breskva-shadow" src="static/assets/images/breskva-senka.png"
+                                alt='Senka'>
+                            <div class="vitaminska__slider-title">breskva <br> 0,5 L</div>
+                        </div>
+                        <div class="vitaminska__slider-slide | js-slider-slide">
+                            <img class="vitaminska__bottle " src="static/assets/images/vitaminska-malina.png"
+                                alt="flasa" title="flasa">
+                            <img class="vitaminska__shadow" src="static/assets/images/vitaminska-shadow.png"
+                                alt='Senka'>
+
+                            <img class="vitaminska__malina" src="static/assets/images/malina.png" alt="flasa"
+                                title="flasa">
+                            <img class="vitaminska__malina-shadow" src="static/assets/images/malina-senka.png"
+                                alt='Senka'>
+                            <img class="vitaminska__malina2" src="static/assets/images/malina3.png" alt="flasa"
+                                title="flasa">
+                            <img class="vitaminska__malina-shadow2" src="static/assets/images/malina-senka.png"
+                                alt='Senka'>
+                            <img class="vitaminska__malina3" src="static/assets/images/malina2.png" alt="flasa"
+                                title="flasa">
+                            <img class="vitaminska__malina-shadow3" src="static/assets/images/malina-senka.png"
+                                alt='Senka'>
+
+
+                            <img class="vitaminska__madarina-limun" src="static/assets/images/limun.png" alt="flasa"
+                                title="flasa">
+                            <img class="vitaminska__madarina-limun-shadow" src="static/assets/images/limun-senka.png"
+                                alt='Senka'>
+                            <div class="vitaminska__slider-title">malina i limun<br> 0,5 L</div>
+                        </div>
+
+
+                    </div>
+                    <div class="hotspot hotspot--vitaminska | js-hotspot">
+                        <div class="hotspot__indicator | js-hotspot-indicator">
+                            <svg width="47" height="47" viewBox="0 0 47 47" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <circle class="hotspot__indicator-center" cx="24" cy="23" r="9" fill="#CE5E2C" />
+                                <circle class="hotspot__indicator-small" cx="23.5" cy="23.5" r="17" stroke="#CE5E2C" />
+                                <circle class="hotspot__indicator-big" cx="23.5" cy="23.5" r="23" stroke="#CE5E2C" />
+                                <g class="hotspot__indicator-close">
+                                    <path d="M19.5 18.5L28.5 27.5" stroke="black" stroke-width="2" />
+                                    <path d="M28.5 18.5L19.5 27.5" stroke="black" stroke-width="2" />
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="hotspot__content">
+                            Još 1960. godine Fruška gora je prepoznata kao jedinstveni ekosistem, koji se
+                            morao sačuvati zbog svog i prirodnog i kulturnog bogatstva. Tako je nastao naš
+                            najstariji nacionalni park, koji predstavlja nacionalno blago nemerljive
+                            vrednosti.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-text about-text--three">
+                    <div class="about-text__leafs | js-about3-leafs">
+                        <img class="about2-text__leafs-one | js-image-load"
+                            src="static/assets/images/about-leaf-one.png" alt="List">
+                        <img class="about2-text__leafs-two | js-image-load"
+                            src="static/assets/images/about-leaf-two.png" alt="List">
+                        <img class="about2-text__leafs-three | js-image-load"
+                            src="static/assets/images/about-leaf-three.png" alt="List">
+                        <img class="about2-text__leafs-four | js-image-load"
+                            src="static/assets/images/about-leaf-four.png" alt="List">
+                        <img class="about2-text__leafs-five | js-image-load"
+                            src="static/assets/images/about-leaf-five.png" alt="List">
+                        <img class="about2-text__leafs-six | js-image-load"
+                            src="static/assets/images/about-leaf-six.png" alt="List">
+                        <img class="about2-text__leafs-seven | js-image-load"
+                            src="static/assets/images/about-leaf-seven.png" alt="List">
+                        <img class="about2-text__leafs-eight | js-image-load"
+                            src="static/assets/images/about-leaf-eight.png" alt="List">
+                    </div>
+                    <div class="about-text__inner">
+                        <div class="about-text__left">
+                            <h3 class="about-text__heading qanelas-28-bold | js-about3-heading">
+                                Prirodna izvorska voda <br> obogaćena vitaminima
+                            </h3>
+                        </div>
+                        <div class="about-text__right cream-16-normal | js-about3-right">
+
+                            <p>Jazak voda nosi u sebi dragocene minerale, a njena posebna funkcionalna
+                                linija u sebi krije i nesvakidašnje, osvežavajuće spojeve voćnih ukusa i
+                                kompleksa vitamina.</p>
+                            <p>Pružite dodatnu energiju vašem organizmu uz neodoljive prirodne arome
+                                mandarine, limuna, breskve i maline, kao i ukuse zove i aloe vere.</p>
+
+                        </div>
+                    </div>
+                    <picture>
+                        <source srcset="static/assets/images/new-krosnja.png" type="image/png"
+                            media="(max-width: 767px)">
+                        <img class="about3-new-krosnja" src="static/assets/images/new-krosnja.png" alt='Zbunje'>
+                    </picture>
+                </div>
+
+                <div class="imuno">
+                    <picture>
+                        <source srcset="static/assets/images/about-text-mobile.png" type="image/png"
+                            media="(max-width: 767px)">
+                        <img class="imuno_bg" src="static/assets/images/about3-text.png" alt='Zbunje'>
+                    </picture>
+                    <picture>
+                        <source srcset="static/assets/images/new-krosnja.png" type="image/png"
+                            media="(max-width: 767px)">
+                        <img class="imuno-top-new-krosnja" src="static/assets/images/new-krosnja.png" alt='Zbunje'>
+                    </picture>
+                    <div class="imuno_inner">
+                        <picture>
+                            <source srcset="static/assets/images/imuno-deblo.webp" type="image/webp">
+                            <img class="imuno__deblo | js-image-load js-image-load-mobile"
+                                src="static/assets/images/imuno-deblo.png" alt='Zbunje'>
+                        </picture>
+                        <picture>
+                            <source srcset="static/assets/images/imuno-flasa.webp" type="image/webp">
+                            <img class="imuno__flasa | js-image-load js-image-load-mobile js-imuno-flasa hidden"
+                                src="static/assets/images/imuno-flasa.png" alt='Zbunje'>
+                        </picture>
+                        <picture>
+                            <source srcset="static/assets/images/imuno-deblo-over.webp" type="image/webp">
+                            <img class="imuno__deblo-over | js-image-load js-image-load-mobile"
+                                src="static/assets/images/imuno-deblo-over.png" alt='Zbunje'>
+                        </picture>
+                        <div class="imuno-title hidden | js-imuno-title">Imuno voda <br> 0,5 L</div>
+                    </div>
+                    <picture>
+                        <source srcset="static/assets/images/lijana.webp" type="image/webp">
+                        <img class="imuno__lijana | js-image-load js-image-load-mobile"
+                            src="static/assets/images/lijana.png" alt='Zbunje'>
+                    </picture>
+                    <picture>
+                        <source srcset="static/assets/images/imuno-grana.webp" type="image/webp">
+                        <img class="imuno__grana | js-image-load js-image-load-mobile"
+                            src="static/assets/images/imuno-grana.png" alt='Zbunje'>
+                    </picture>
+                    <picture>
+                        <source srcset="static/assets/images/trava.webp" type="image/webp">
+                        <img class="imuno__trava | js-image-load js-image-load-mobile"
+                            src="static/assets/images/trava.png" alt='Zbunje'>
+                    </picture>
+                    <picture>
+                        <source srcset="static/assets/images/imuno-zbun1.webp" type="image/webp">
+                        <img class="imuno__zbun1 | js-image-load js-image-load-mobile"
+                            src="static/assets/images/imuno-zbun1.png" alt='Zbunje'>
+                    </picture>
+                    <picture>
+                        <source srcset="static/assets/images/imuno-zbun1.webp" type="image/webp">
+                        <img class="imuno__zbun3 | js-image-load js-image-load-mobile"
+                            src="static/assets/images/imuno-zbun1.png" alt='Zbunje'>
+                    </picture>
+                    <picture>
+                        <source srcset="static/assets/images/imuno-krosnja.webp" type="image/webp">
+                        <img class="imuno__krosnja | js-image-load js-image-load-mobile"
+                            src="static/assets/images/imuno-krosnja.png" alt='Zbunje'>
+                    </picture>
+                    <picture>
+                        <source srcset="static/assets/images/imuno-krosnja2.webp" type="image/webp">
+                        <img class="imuno__krosnja2 | js-image-load js-image-load-mobile"
+                            src="static/assets/images/imuno-krosnja2.png" alt='Zbunje'>
+                    </picture>
+                    <picture>
+                        <source srcset="static/assets/images/imuno-zbun2.webp" type="image/webp">
+                        <img class="imuno__zbun2 | js-image-load js-image-load-mobile"
+                            src="static/assets/images/imuno-zbun2.png" alt='Zbunje'>
+                    </picture>
+                </div>
+
+                <div class="about-text about-text--three about-text--four">
+                    <div class="about-text__leafs | js-about4-leafs">
+                        <img class="about2-text__leafs-one | js-image-load"
+                            src="static/assets/images/about-leaf-one.png" alt="List">
+                        <img class="about2-text__leafs-two | js-image-load"
+                            src="static/assets/images/about-leaf-two.png" alt="List">
+                        <img class="about2-text__leafs-three | js-image-load"
+                            src="static/assets/images/about-leaf-three.png" alt="List">
+                        <img class="about2-text__leafs-four | js-image-load"
+                            src="static/assets/images/about-leaf-four.png" alt="List">
+                        <img class="about2-text__leafs-five | js-image-load"
+                            src="static/assets/images/about-leaf-five.png" alt="List">
+                        <img class="about2-text__leafs-six | js-image-load"
+                            src="static/assets/images/about-leaf-six.png" alt="List">
+                        <img class="about2-text__leafs-seven | js-image-load"
+                            src="static/assets/images/about-leaf-seven.png" alt="List">
+                        <img class="about2-text__leafs-eight | js-image-load"
+                            src="static/assets/images/about-leaf-eight.png" alt="List">
+                    </div>
+                    <div class="about-text__inner">
+                        <div class="about-text__left">
+                            <h3 class="about-text__heading qanelas-28-bold | js-about4-heading">
+                                IMUNO VODA - <br> ZA JAČI IMUNITET
+                            </h3>
+                        </div>
+                        <div class="about-text__right cream-16-normal | js-about4-right">
+
+                            <p>Priroda je nepresušan izvor zdravlja i jačeg imuniteta. Jazak Imuno u sebi
+                                sadrži izbalansiran odnos životno važnih minerala &#8211; magnezijuma,
+                                selena i cinka, koji povoljno utiču na vaš imuni sistem i jačaju ga.</p>
+                            <p><strong>Magnezijum</strong> doprinosi smanjenju umora i iscrpljenosti, kao i
+                                boljem radu mišića. <strong>Cink</strong> doprinosi normalnom funkcionisanju
+                                imunog sistema, dok <strong>selen</strong> ima važnu funkciju i radu imunog
+                                sistema i štitne žlezde.</p>
+                            <p>Pored navedenih prednosti, Jazak Imuno izuzetno osvežava zahvaljujući svojoj
+                                gaziranosti.</p>
+
+                        </div>
+                    </div>
+                    <picture>
+                        <source srcset="static/assets/images/about-text-mobile.png" type="image/png"
+                            media="(max-width: 767px)">
+                        <img class="about3-text__img" src="static/assets/images/about3-text.png" alt='Zbunje'>
+                    </picture>
+                    <picture>
+                        <source srcset="static/assets/images/about-text-mobile.png" type="image/png"
+                            media="(max-width: 767px)">
+                        <img class="about3-text__img2" src="static/assets/images/about3-text.png" alt='Zbunje'>
+                    </picture>
+                    <picture>
+                        <source srcset="static/assets/images/about3-text3.webp" type="image/webp">
+                        <img class="about3-text__img3 | js-image-load js-image-load-mobile"
+                            src="static/assets/images/about3-text3.png" alt='Zbunje'>
+                    </picture>
+
+                    {% include 'frontend/layout/footer.html' %}
+
+                </div>
+            </div>
+            <div class="content-triggers">
+                <div class="skip-target | js-skip-target"></div>
+                <div class="about-heading-trigger | js-about-heading-trigger"></div>
+                <div class="fruska-gora-trigger | js-fruska-gora-target"></div>
+                <div class="negazirana-trigger | js-negazirana-target"></div>
+                <div class="vitaminska-trigger | js-vitaminska-target"></div>
+                <div class="about-branch-trigger | js-about-branch-trigger"></div>
+                <div class="about2-heading-trigger | js-about2-heading-trigger"></div>
+                <div class="about3-heading-trigger | js-about3-heading-trigger"></div>
+                <div class="about4-heading-trigger | js-about4-heading-trigger"></div>
+                <div class="imuno-flasa-trigger | js-imuno-flasa-trigger"></div>
+                <div class="imuno-flasa-target | js-imuno-flasa-target"></div>
+                <div class="watterfal-trigger-one | js-watterfal-trigger-one"></div>
+            </div>
+        </div>
+        <div class="music">
+        </div>
+
+</main>
+
+{% endblock %}
+
+{% block myjs %}
+<script>
+
+
+</script>
+{% endblock %}
