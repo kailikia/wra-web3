@@ -188,6 +188,13 @@
     #moove_gdpr_cookie_modal.gdpr_lightbox-hide {
         display: none
     }
+
+    .image_resize {
+            max-width: 100%;
+            height: auto;
+            width: 70px;
+            height: 70px;
+        }
 </style>
 
 <script type="application/ld+json">
@@ -238,9 +245,9 @@
                 <div class="menu__inner">
                     <div class="menu__top">
                         <a class="menu__top-logo-link" href="index.html">
-                            <img class="menu__logo | js-menu-logo" src="static/assets/images/logo.png" alt="logo">
+                            <img class="menu__logo | js-menu-logo image_resize" src="static/wp-content/themes/Jazak/assets/images/wra-logo.png" alt="logo">
                         </a>
-                        <nav class="menu__nav">
+                        <!-- <nav class="menu__nav">
                             <ul class="menu__nav-list"+>
                                 <li class="menu__nav-item | js-menu-nav-item js-nav-fruska-gora"
                                     data-search="fruska-gora">
@@ -268,6 +275,38 @@
                                 <li class="menu__nav-item | js-menu-nav-item js-nav-contact" data-search="kontakt">
                                     <a href="#" aria-label="Kontakt">
                                         Contact
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav> -->
+                        <nav class="menu__nav">
+                            <ul class="menu__nav-list">
+                                <li class="menu__nav-item | js-menu-nav-item js-nav-fruska-gora"
+                                    data-search="fruska-gora">
+                                    <a href="#" aria-label="Fruška gora">
+                                        About Us
+                                    </a>
+                                </li>
+                                <li class="menu__nav-item | js-menu-nav-item js-nav-negazirana"
+                                    data-search="negazirana">
+                                    <a href="#" aria-label="Mineralna i gazirana voda">
+                                        Projects
+                                    </a>
+                                </li>
+                                <li class="menu__nav-item | js-menu-nav-item js-nav-vitaminska"
+                                    data-search="vitaminska">
+                                    <a href="#" aria-label="Vitaminske vode">
+                                        Tenders
+                                    </a>
+                                </li>
+                                <li class="menu__nav-item | js-menu-nav-item js-nav-imuno" data-search="imuno">
+                                    <a href="#" aria-label="Vitaminske vode">
+                                        Publications
+                                    </a>
+                                </li>
+                                <li class="menu__nav-item | js-menu-nav-item js-nav-contact" data-search="kontakt">
+                                    <a href="#" aria-label="Kontakt">
+                                        Contact Us
                                     </a>
                                 </li>
                             </ul>
