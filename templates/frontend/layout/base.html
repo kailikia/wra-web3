@@ -9,11 +9,13 @@
     <link rel="profile" href="https://gmpg.org/xfn/11">
 
     <link rel="apple-touch-icon" sizes="180x180" href="static/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="256x256" href="static/favicon-256x256.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="static/favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="256x256" href="/static/assets/images/wra-logo.png">
+    <!-- <link rel="icon" type="image/png" sizes="192x192" href="static/favicon-192x192.png">
     <link rel="icon" type="image/png" sizes="150x150" href="static/favicon-150x150.png">
     <link rel="icon" type="image/png" sizes="32x32" href="static/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="static/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/favicon-16x16.png"> -->
+
+
     <link rel="preload" href="static/assets/fonts/Gilroy-Extrabold.html" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="static/assets/fonts/Gilroy-RegularItalic.html" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="static/assets/fonts/Gilroy-Medium.html" as="font" type="font/woff2" crossorigin>
@@ -40,8 +42,6 @@
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
-    <!-- / Yoast SEO plugin. -->
-
 
     <link rel='dns-prefetch' href='http://www.google.com/' />
     <link rel='dns-prefetch' href='http://s.w.org/' />
@@ -188,6 +188,13 @@
     #moove_gdpr_cookie_modal.gdpr_lightbox-hide {
         display: none
     }
+
+    .image_resize {
+            max-width: 100%;
+            height: auto;
+            width: 70px;
+            height: 70px;
+        }
 </style>
 
 <script type="application/ld+json">
@@ -225,7 +232,8 @@
 <body class="page-template page-template-templates page-template-privacy page-template-templatesprivacy-php page page-id-290">
 
     <div id="page" class="site loading | js-site" data-url='https://www.wra.go.ke/' data-theme-url="static">
-        <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+        <!-- <a class="skip-link screen-reader-text" href="#content">Skip to content</a> -->
+        <img class="skip-link screen-reader-text" src="/static/assets/images/wra-logo.png">
         <script>
             window.onbeforeunload = function () {
                 window.scrollTo(0, 0);
@@ -237,14 +245,14 @@
                 <div class="menu__inner">
                     <div class="menu__top">
                         <a class="menu__top-logo-link" href="index.html">
-                            <img class="menu__logo | js-menu-logo" src="static/assets/images/logo.png" alt="logo">
+                            <img class="menu__logo | js-menu-logo image_resize" src="static/wp-content/themes/Jazak/assets/images/wra-logo.png" alt="logo">
                         </a>
-                        <nav class="menu__nav">
+                        <!-- <nav class="menu__nav">
                             <ul class="menu__nav-list"+>
                                 <li class="menu__nav-item | js-menu-nav-item js-nav-fruska-gora"
                                     data-search="fruska-gora">
                                     <a href="#" aria-label="Fruška gora">
-                                        Frushka mountain
+                                        Home
                                     </a>
                                 </li>
                                 <li class="menu__nav-item | js-menu-nav-item js-nav-negazirana"
@@ -270,6 +278,38 @@
                                     </a>
                                 </li>
                             </ul>
+                        </nav> -->
+                        <nav class="menu__nav">
+                            <ul class="menu__nav-list">
+                                <li class="menu__nav-item | js-menu-nav-item js-nav-fruska-gora"
+                                    data-search="fruska-gora">
+                                    <a href="#" aria-label="Fruška gora">
+                                        About Us
+                                    </a>
+                                </li>
+                                <li class="menu__nav-item | js-menu-nav-item js-nav-negazirana"
+                                    data-search="negazirana">
+                                    <a href="#" aria-label="Mineralna i gazirana voda">
+                                        Projects
+                                    </a>
+                                </li>
+                                <li class="menu__nav-item | js-menu-nav-item js-nav-vitaminska"
+                                    data-search="vitaminska">
+                                    <a href="#" aria-label="Vitaminske vode">
+                                        Tenders
+                                    </a>
+                                </li>
+                                <li class="menu__nav-item | js-menu-nav-item js-nav-imuno" data-search="imuno">
+                                    <a href="#" aria-label="Vitaminske vode">
+                                        Publications
+                                    </a>
+                                </li>
+                                <li class="menu__nav-item | js-menu-nav-item js-nav-contact" data-search="kontakt">
+                                    <a href="#" aria-label="Kontakt">
+                                        Contact Us
+                                    </a>
+                                </li>
+                            </ul>
                         </nav>
                         <div class="menu__top-fix"></div>
                     </div>
@@ -284,7 +324,7 @@
                                         fill="#0078b9" />
                                 </svg>
                             </a>
-                            <a class="menu__icons-link | js-menu-nav-icon" href="https://www.instagram.com/jazak_voda/"
+                            <a class="menu__icons-link | js-menu-nav-icon" href="https://www.instagram.com/"
                                 rel="noreferrer" target="_blank" aria-label="Instagram">
                                 <svg width="36" height="36" viewBox="0 0 36 36" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -374,9 +414,9 @@
             <img class="loader__img" src="static/assets/images/sea.png" alt="More">
         </picture>
         <div class="loader__percentage"><span class="js-loader-percentage">0</span><span class="loader__percentage-precentage">%</span>
-        </div>
+        </div><br><br>
 
-        <svg class="loader__svg" width="717" height="290" viewBox="0 0 717 290" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- <svg class="loader__svg" width="717" height="290" viewBox="0 0 717 290" fill="none" xmlns="http://www.w3.org/2000/svg">
             <pattern id="water" width=".25" height="1.1" patternContentUnits="objectBoundingBox">
                 <path fill="#00ADFF" d="M0.25,1H0c0,0,0-0.659,0-0.916c0.083-0.303,0.158,0.334,0.25,0C0.25,0.327,0.25,1,0.25,1z" />
             </pattern>
@@ -402,12 +442,14 @@
                 <use x="0" y="0" xlink:href="#wave-mask" opacity="1" fill="#ffffff" />
             </mask>
             <rect class="loader__wave | js-wave" mask="url(#text-mask)" fill="url(#water)" x="-714" y="290" width="1434" height="0" />
-        </svg>
+        </svg> -->
+
+
         <div class="loader__text">The site is loading</div>
     </div>
 </div>
 
-            <div class="skip-intro show | js-skip-intro">Skip the introduction</div>
+            <div class="skip-intro show | js-skip-intro"><img src="static/assets/images/wra-logo.png" style="height: 2em"></div>
 
             <div class="sound-control | js-sound-control">
                 <svg class="sound-control__on" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.3 48.3">
@@ -466,8 +508,8 @@
                 </svg>
             </div>
 
-            <header>
-                <img src="https://www.jazakvoda.rs/wp-content/assets/images/menu-logo.png" alt="Jazak logo">
+            <!-- <header>
+                <img src="wp-content/assets/images/menu-logo.png" alt="Jazak logo">
                 <nav class="menu">
                     <ul class="menu__list">
                         <li class="menu__item">
@@ -475,7 +517,7 @@
                         </li>
                     </ul>
                 </nav>
-            </header>
+            </header> -->
 
 
             {% block content %}{% endblock %}
