@@ -1,3 +1,4 @@
+from distutils.log import debug
 from flask import Flask, request, render_template
 
 app = Flask(__name__)
@@ -38,4 +39,4 @@ def publications():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
