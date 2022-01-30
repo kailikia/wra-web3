@@ -1,267 +1,397 @@
-{% extends "frontend/layout/base_other.html" %}
+{% extends "frontend/layout/base_other.html" %} {% block myotherstyle %}
 
-{% block myotherstyle %}
+<style></style>
 
+{% endblock %} {% block content %}
 <style>
-
+    /*---------------------------------------------*/
+    
+    input {
+        outline: none;
+        border: none;
+    }
+    
+    textarea {
+        outline: none;
+        border: none;
+    }
+    
+    textarea:focus,
+    input:focus {
+        border-color: transparent !important;
+    }
+    
+    input::-webkit-input-placeholder {
+        color: #bdbdd3;
+    }
+    
+    input:-moz-placeholder {
+        color: #bdbdd3;
+    }
+    
+    input::-moz-placeholder {
+        color: #bdbdd3;
+    }
+    
+    input:-ms-input-placeholder {
+        color: #bdbdd3;
+    }
+    
+    textarea::-webkit-input-placeholder {
+        color: #bdbdd3;
+    }
+    
+    textarea:-moz-placeholder {
+        color: #bdbdd3;
+    }
+    
+    textarea::-moz-placeholder {
+        color: #bdbdd3;
+    }
+    
+    textarea:-ms-input-placeholder {
+        color: #bdbdd3;
+    }
+    /*==================================================================
+[ Contact - Area]*/
+    
+    .container-contact {
+        width: 100%;
+        min-height: 70vh;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+        position: relative;
+        background-color: transparent;
+    }
+    
+    .wrap-contact {
+        width: 700px;
+        background: transparent;
+        border: 1px solid green;
+        padding: 40px 0px 20px 0px;
+    }
+    
+    .wrap-contact-image {
+        width: 600px;
+        background: transparent;
+        padding: 40px 0px 20px 0px;
+    }
+    /*==================================================================
+[ Contact - Form ]*/
+    
+    .contact-form {
+        width: 100%;
+    }
+    
+    .error {
+        padding: 5px 9px;
+        border: 1px solid red;
+        color: red;
+        border-radius: 3px;
+    }
+    
+    .success {
+        padding: 5px 9px;
+        border: 1px solid green;
+        color: green;
+        border-radius: 3px;
+    }
+    /*------------------------------------------------------------------
+[ Input ]*/
+    
+    .wrap-input {
+        width: 90%;
+        background-color: transparent;
+        border: 1px solid green;
+        border-radius: 7px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 16px;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .input {
+        position: relative;
+        display: block;
+        width: 100%;
+        background: transparent;
+        border-radius: 31px;
+        color: #8f8fa1;
+        line-height: 1.2;
+        font-family: "Montserrat";
+        font-size: 12px;
+        font-weight: 400;
+        letter-spacing: 0.2em;
+        height: 42px;
+        padding-left: 10px;
+        padding-right: 10px;
+        text-transform: none;
+    }
+    /*---------------------------------------------*/
+    
+    input.input {
+        height: 62px;
+        padding: 0 15px 0 15px;
+    }
+    
+    textarea.input {
+        min-height: 169px;
+        padding: 19px 15px 0 15px;
+    }
+    /*------------------------------------------------------------------
+[ Focus Input ]*/
+    
+    .focus-input {
+        display: block;
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        transform: translateX(-50%);
+        border-radius: 31px;
+        background-color: #fff;
+        pointer-events: none;
+        -webkit-transition: all 0.4s;
+        -o-transition: all 0.4s;
+        -moz-transition: all 0.4s;
+        transition: all 0.4s;
+    }
+    
+    .input:focus+.focus-input100 {
+        width: calc(100% + 20px);
+    }
+    /*------------------------------------------------------------------
+[ Button ]*/
+    
+    .container-contact-form-btn {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-top: 10px;
+    }
+    
+    .contact-form-btn {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 20px;
+        min-width: 250px;
+        height: 50px;
+        background-color: transparent;
+        border-radius: 7px;
+        cursor: pointer;
+        border: 1px solid green;
+        font-family: "Montserrat";
+        font-size: 16px;
+        color: #fff;
+        line-height: 1.2;
+        text-transform: uppercase;
+        -webkit-transition: all 0.4s;
+        -o-transition: all 0.4s;
+        -moz-transition: all 0.4s;
+        transition: all 0.4s;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .contact-form-btn::before {
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        transform: translateX(-50%);
+        border-radius: 7px;
+        background-color: transparent;
+        pointer-events: none;
+        -webkit-transition: all 0.4s;
+        -o-transition: all 0.4s;
+        -moz-transition: all 0.4s;
+        transition: all 0.4s;
+    }
+    
+    .contact-form-btn:hover:before {
+        background-color: green;
+        transition: .5s ease;
+    }
+    
+    .validate-input {
+        position: relative;
+    }
+    /*==================================================================
+[ Info Grid]*/
+    
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: 100px;
+        grid-gap: 100px;
+        padding: 10px 30px 0px 30px;
+    }
+    
+    .grid-container>div {
+        padding: 20px 0;
+        font-size: 10px;
+    }
+    
+    .left-align {
+        text-align: left;
+    }
+    
+    .right-align {
+        text-align: right;
+    }
+    /*==================================================================
+[  Hero title ]*/
+    
+    .listing-hero {
+        background: #F7F0EA;
+        padding: 101px 0 30px;
+    }
+    
+    .hero-heading {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 709px;
+    }
+    
+    section#post-28 {
+        padding-top: 155px;
+    }
+    
+    .hero-large {
+        display: inline-block;
+        width: 40%;
+        font-weight: 300;
+        font-size: 56px;
+        line-height: 56px;
+        position: relative;
+        top: -19px;
+        color: #454545;
+    }
+    
+    .hero-text {
+        display: inline-block;
+        width: 59%;
+        vertical-align: top;
+        border-left: 1px solid #8E8E8E;
+        padding: 0 33px;
+        font-size: 15px;
+        line-height: 23px;
+        /* or 153% */
+        color: #454545;
+        vertical-align: top;
+    }
+    
+    .hero-text .btn.no-border {
+        margin-top: 15px;
+        margin-bottom: 6.5px;
+        background-image: url(../images/Path3.png);
+        background-repeat: no-repeat;
+        background-size: 25px;
+        display: block;
+        background-position: right center;
+        max-width: 99px;
+    }
+    
+    .hero-text i {
+        font-style: normal;
+        margin-top: -6px;
+        display: block;
+    }
 </style>
-
-{% endblock %}
-
-{% block content %}
 
 <div id="content" class="site-content | js-site-content">
     <main id="main" class="site-main site-main--404">
         <div class="page-404">
-            <div class="page-404__bg"
-                style="background-image: url('static/wp-content/themes/Jazak/assets/images/page-404.png')">
-            </div>
+            <div class="page-404__bg" style="
+          background-image: url('static/wp-content/themes/Jazak/assets/images/page-404.png');"></div>
             <div class="page-404__content page-404__content--privacy">
-
-                <h1 class="page-404__heading">
-                    Politika upravljanja kolačićima </h1>
+                <h1 class="page-404__heading">Got any Questions? Send us a message.</h1>
                 <div class="page-404__text">
-                    <h3>O kolačićima</h3>
-                    <p>Prilikom posete internet stranice <a href="../index.html">www.jazakvoda.rs</a> čiji je
-                        vlasnik Naftna industrija Srbije a.d. Novi Sad („<strong>NIS</strong>“), prikupljaju se
-                        informacije koje su neophodne kako bi se unapredilo Vaše korisničko iskustvo. Ove
-                        tehnologije, koje uključuju kolačiće, piksele, veb oznake (engl. web beacons) i gif-ove,
-                        u ovoj Politici upravljanja kolačićima zajednički nazivamo „kolačići“.</p>
-                    <p>Informacije o zaštiti podataka o ličnosti koji se obrađuju od strane
-                        <strong>NIS</strong>-a možete pronaći u našoj <a
-                            href="../politika-privatnosti/index.html">Politici privatnosti</a>, a ukoliko imate
-                        bilo koje pitanje u vezi sa obradom podataka o ličnosti, molimo Vas da kontaktirate
-                        organizacioni deo <strong>NIS</strong>-a nadležan za upravljanje zaštitom podataka o
-                        ličnosti, slanjem upita na adresu elektronske pošte <a href="mailto:fkz@nis.eu">
-                            fkz@nis.eu </a>
-                    </p>
-                    <p>Korišćenjem kolačića (engl. „cookies“) na našoj internet stranici možemo prikupljati
-                        podatke o Vašem računaru koji mogu da uključuju IP adresu, tip pretraživača (engl.
-                        browser), ime domena, vreme pristupa i adrese internet stranica. Na internet stranici <a
-                            href="../index.html">www.jazakvoda.rs</a> je omogućena primena kolačića samo u
-                        slučaju da ste nam za tu aktivnost dali Vaš pristanak odabirom odgovarajuće opcije u
-                        delu podešavanja opcija za <a href="#" class="gdpr-link"> upravljanje kolačićima</a>.
-                    </p>
-                    <h3>Šta su kolačići</h3>
-                    <p>Kolačići su male tekstualne baze podataka (datoteke) koje se obično preuzimaju na Vaš
-                        računar, tablet ili mobilni uređaj (u nastavku teksta: uređaj) s internet lokacija koje
-                        posećujete. Kolačići se koriste za rad svih funkcija internet stranice, ostvarivanje
-                        boljeg korisničkog iskustva, a omogućavaju i vršenje analitike poseta stranici i
-                        napredno online oglašavanje.</p>
-                    <h3>Vrste kolačića</h3>
-                    <p>Kako biste bolje razumeli kolačiće i kako ih kontrolisati, u nastavku možete saznati koje
-                        vrste kolačića postoje, kao i kako se isti koriste na internet stranicama:</p>
-                    <ul>
-                        <li>Kolačići prvog lica (engl. „first party cookies“). Kolačići koje je na Vaš uređaj
-                            instalirala organizacija čiju internet stranicu posećujete poznati su kao kolačići
-                            „prvog lica“.</li>
-                        <li>Kolačići trećeg lica (engl. „third party cookies“). Kolačići koje je na Vaš uređaj
-                            instalirala druga organizacija u odnosu na onu stranicu koju posećujete poznati su
-                            kao kolačići „trećeg lica“.</li>
-                        <li>Stalni kolačići (engl. „persistent cookies“). Stalni kolačići ostaju sačuvani na
-                            Vašem uređaju i nakon zatvaranja internet pretraživača. Uz pomoć ovih kolačića
-                            internet stranice čuvaju podatke kako bi Vam se olakšalo njihovo korišćenje. Na
-                            primer, internet stranice koje zahtevaju unos korisničkog imena i lozinke će
-                            zapamtiti Vaš unos koji će se pojavljivati pri svakoj novoj poseti.</li>
-                        <li>Privremeni kolačići (engl. „session cookies“). Privremeni kolačići uklanjaju se s
-                            Vašeg uređaja u trenutku zatvaranja internet pretraživača putem kojeg ste posetili
-                            određenu internet stranicu. Pomoću ovih kolačića stranice pohranjuju privremene
-                            podatke koji služe za njeno ispravno funkcioniranje..</li>
-                    </ul>
-                    <h3>Koje kolačiće koristi internet stranica <a href="../index.html">www.jazakvoda.rs</a>?
-                    </h3>
-                    <p>Kolačići koje je na Vaš uređaj instalirala organizacija čiju internet stranicu posećujete
-                        poznati su kao kolačići „prvog lica“.</p>
-                    <ul>
-                        <li><strong>Neophodni kolačići</strong> ili strogo potrebni kolačići su kolačići koji se
-                            upotrebljavaju kako bi stranica mogla da funkcioniše i ne mogu biti isključeni.
-                            Možete podesiti Vaš internet pretraživač da Vas obavesti o korišćenju ili da blokira
-                            ove kolačiće, ali u tom slučaju neki delovi internet stranice neće funkcionisati.
-                        </li>
-                        <li><strong>Ostali kolačići</strong> – od stalnih kolačića <strong>NIS</strong> koristi:
-                            <ul>
-                                <li>Ukoliko podešavate jezik, veličinu fonta ili određenu verziju sajta (npr.
-                                    režim visokog kontrasta), za to se koriste kolačići za podešavanje
-                                    korisničkog interfejsa. Po izvršenom podešavanju nije potrebno da navodite
-                                    svoje preferencije prilikom sledeće posete ovom sajtu.</li>
-                                <li>Ako koristite delove sajta za čiji pristup vam je potrebna registracija, u
-                                    tu svrhu na vaš računar postavljamo kolačić za autentifikaciju. Ovo vam
-                                    omogućava odlazak i povratak na te delove sajta bez ponovne autentifikacije.
-                                </li>
-                                <li>Kako bismo pratili broj poseta radi merenja i poboljšanja performansi naše
-                                    internet stranice, koristimo kolačiće prvog lica. Zahvaljujući ovim
-                                    kolačićima možemo odrediti koje stranice su popularne odnosno manje
-                                    popularne. Takođe, zahvaljujući njima možemo da vidimo na koji način se
-                                    posetioci kreću na internet stranicama, odnosno kako ih koriste. Sve
-                                    informacije koje ovi kolačići prikupljaju su agregirani, te predstavljaju
-                                    anonimizovane podatke. Ukoliko ne dozvolite ove kolačiće, nećemo imati
-                                    informaciju kada ste posetili našu stranicu.</li>
-                                <li>Za praćenje mrežne statistike možemo koristiti i servise poput Google
-                                    Analytics. U tom slučaju Google na vaš računar postavlja kolačić trećeg
-                                    lica. Takav kolačić postavlja se i kada koristimo Google mape.</li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <div class="js-table-box">
-                        <table class="js-table">
-                            <tbody>
-                                <tr>
-                                    <td>Kategorija kolačića</td>
-                                    <td>Naziv kolačića</td>
-                                    <td>Opis kolačića</td>
-                                </tr>
-                                <tr>
-                                    <td>First party cookie</td>
-                                    <td>has_js</td>
-                                    <td>Ovi kolačići omogućavaju da veb-sajt zapamti vaše izbore (poput vašeg
-                                        korisničkog imena, jezika ili regiona u kom se nalazite) i pruži vam
-                                        poboljšane, ličnije funkcije. Na primer, veb-sajt može da vam obezbedi
-                                        lokalnu vremensku prognozu ili novosti o saobraćaju tako što će u
-                                        kolačiću uskladištiti region u kom se trenutno nalazite. Ovi kolačići
-                                        mogu da se koriste i za pamćenje promena koje ste uneli u vezi sa
-                                        veličinom teksta, fontovima i drugim delovima veb-stranica koje možete
-                                        da prilagodite. Mogu da se koriste i za pružanje usluga koje ste
-                                        zatražili, poput gledanja video-zapisa ili komentarisanja bloga.
-                                        Informacije koje ovi kolačići prikupljaju možda će biti anonimizovane i
-                                        ne mogu da se koriste za praćenje vaših aktivnosti tokom pregledanja
-                                        drugih veb-sajtova.</td>
-                                </tr>
-                                <tr>
-                                    <td>Analytics cookie</td>
-                                    <td>_ga</td>
-                                    <td>Ovaj kolačić je podešen radi razlikovanja jedinstvenih korisnika pomoću
-                                        dodeljivanja nasumično generisanog broja kao identifikatora klijenta. To
-                                        se koristi za izračunavanje podataka o posetiocima, sesijama i
-                                        kampanjama u analitičkim izveštajima o veb-sajtovima.</td>
-                                </tr>
-                                <tr>
-                                    <td>Analytics cookie</td>
-                                    <td>_gid</td>
-                                    <td>Koristi se za razlikovanje korisnika.</td>
-                                </tr>
-                                <tr>
-                                    <td>Facebook advertising cookie</td>
-                                    <td>act</td>
-                                    <td>Ovo je Facebook kolačić koji Facebook koristi za svoju analitiku i
-                                        istraživanje.</td>
-                                </tr>
-                                <tr>
-                                    <td>Facebook advertising cookie</td>
-                                    <td>datr</td>
-                                    <td>Facebook ga koristi za identifikovanje pregledača korisnika.</td>
-                                </tr>
-                                <tr>
-                                    <td>Facebook advertising cookie</td>
-                                    <td>fr</td>
-                                    <td>Sadrži jedinstveni identifikator pregledača i korisnika koji se koristi
-                                        za ciljno reklamiranje.</td>
-                                </tr>
-                                <tr>
-                                    <td>Facebook advertising cookie</td>
-                                    <td>m_pixel_ratio</td>
-                                    <td>Koristi se za optimizovanje učinka veb-sajta za oglašivače.</td>
-                                </tr>
-                                <tr>
-                                    <td>Facebook advertising cookie</td>
-                                    <td>presence</td>
-                                    <td>Facebook kolačić koji sadrži status „ćaskanja“ prijavljenog korisnika.
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Facebook advertising cookie</td>
-                                    <td>sb</td>
-                                    <td>Koristi ga Facebook za poboljšavanje predloga za prijateljstvo.</td>
-                                </tr>
-                                <tr>
-                                    <td>Facebook advertising cookie</td>
-                                    <td>wd</td>
-                                    <td>Koristi ga Facebook za poboljšavanje učinka.</td>
-                                </tr>
-                                <tr>
-                                    <td>Facebook advertising cookie</td>
-                                    <td>xs</td>
-                                    <td>Facebook kolačić koji se koristi za održavanje sesije. Funkcioniše
-                                        zajedno sa kolačićem c_user za potvrđivanje vašeg identiteta na
-                                        Facebook-u.</td>
-                                </tr>
-                                <tr>
-                                    <td>Analytics cookie</td>
-                                    <td>_fbp</td>
-                                    <td>Ovaj kolačić pomaže da isporučimo reklame ljudima koji su već posetili
-                                        naš veb-sajt kada koriste Facebook ili neku digitalnu platformu koja
-                                        koristi tehnologiju reklamiranja na Facebook-u Funkcija: kolačići za
-                                        ciljni marketing/remarketing.</td>
-                                </tr>
-                                <tr>
-                                    <td>Analytics cookie</td>
-                                    <td>c_user</td>
-                                    <td>Kolačić prijavljivanja korisnika Facebook-a, koji se koristi za
-                                        isporučivanje reklama relevantnijih za korisnika i njegova
-                                        interesovanja.</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <h3>Uključivanje i isključivanje kolačića</h3>
-                    <p>Na internet stranici <a href="../index.html">www.jazakvoda.rs</a> korisnik u svakom
-                        trenutku može isključiti ili uključiti kolačiće promenom podešavanja ponuđenih opcija
-                        upravljanja kolačićima. Ako isključite kolačiće, isti se neće čuvati na Vašem internet
-                        pretraživaču. Kolačići se mogu isključiti i preko podešavanja internet pretraživača.</p>
-                    <p>Svrha kolačića je poboljšanje i omogućavanje upotrebe naših internet stranica i njihovih
-                        procesa, te je potrebno imati u vidu da sprečavanjem ili brisanjem kolačića možete
-                        onemogućiti funkcionisanje svih delova stranice ili prouzrokovati njihov drugačiji rad i
-                        izgled u internet pretraživaču.</p>
-                    <p>Ukoliko isključite oglašivačke kolačiće moguće je da prikazivanje naših oglasa bude manje
-                        relevantnog sadržaja za Vas ili Vam se isti oglas može pokazati više puta nego što to
-                        želite.</p>
-                    <p>Internet pretraživači omogućavaju promene podešavanja kolačića. Podešavanja se najčešće
-                        nalaze u meniju „Opcije” (engl. „Options“) ili „Parametri” (engl. „Preferences“). Dole
-                        navedeni linkovi mogu biti od pomoći ukoliko korisnik želi bolje da razume ova
-                        podešavanja:</p>
-                    <ul>
-                        <li><a href="https://support.google.com/chrome/answer/95647?hl=en">podešavanja kolačića
-                                u Chrome-u</a></li>
-                        <li><a href="https://support.apple.com/en-us/HT201265">podešavanja kolačića u
-                                Safari-u</a></li>
-                        <li><a
-                                href="https://support.mozilla.org/en-US/kb/cookies-information-websites-store-on-your-computer?redirectlocale=en-US&amp;redirectslug=Cookies">podešavanje
-                                kolačića u Firefox-u</a></li>
-                        <li><a
-                                href="https://support.microsoft.com/en-us/help/17442/windows-internet-explorer-delete-manage-cookies">podešavanje
-                                kolačića u Internet Explorer-u</a></li>
-                    </ul>
-                    <p>Takođe, kao izvor dodatnih informacija za upravljanje kolačićima možete da koristite i
-                        stranicu <a href="http://www.aboutcookies.org/"> www.aboutcookies.org </a>.</p>
-                    <h3>Dodatne informacije o kolačićima</h3>
-                    <p>Društvene mreže takođe mogu da postavljaju kolačiće na Vaš računar. To se događa na
-                        internet stranicama koje vam omogućavaju prijavu i registraciju putem naloga društvenih
-                        mreža, te ukoliko delite sadržaj internet stranice na društvenim mrežama. Konkretni
-                        uticaj na Vašu privatnost će se razlikovati od društvene mreže do društvene mreže i
-                        zavisi od podešavanja privatnosti koje ste izabrali na tim mrežama. Kako upravljati ovim
-                        kolačićima možete saznati na internet stranicama tih društvenih mreža.</p>
-                    <p>Na sledećim linkovima možete da saznate više informacija o kolačićima i pravilima
-                        privatnosti:</p>
-                    <ul>
-                        <li><a href="https://policies.google.com/privacy?hl=sr-Latn&amp;gl=rs">Google-ova
-                                pravila privatnosti</a></li>
-                        <li><a href="https://policies.google.com/technologies/types?hl=sr-Latn&amp;gl=rs">Vrste
-                                kolačića koje upotrebljava Google</a></li>
-                        <li><a href="https://www.facebook.com/policies/cookies/">Facebook kolačići i druge
-                                tehnologije čuvanja</a></li>
-                    </ul>
+                    <section>
+
+                        <div class="container-contact">
+                            <div class="wrap-contact">
+
+                                <form name="contact" class="contact-form validate-form" method="post" action="contact-form-handler.php">
+
+                                    <div class="wrap-input validate-input" data-validate="Please enter your name">
+                                        <input class="input" type="text" name="name" placeholder="Full Name">
+                                    </div>
+
+                                    <div class="wrap-input validate-input" data-validate="Please enter your email">
+                                        <input class="input" type="text" name="email" placeholder="E-mail">
+                                    </div>
+
+                                    <div class="wrap-input validate-input" data-validate="Please enter your message">
+                                        <textarea class="input" type="text" name="message" placeholder="Your Message"></textarea>
+                                    </div>
+
+                                    <div class="container-contact-form-btn">
+                                        <button type="submit" class="contact-form-btn">
+                                            <span>Send</span>
+                                        </button>
+                                    </div>
+
+                                    <div class="grid-container">
+                                        <div class="item1 left-align"><i class="fa fa-lg fa-map-marker-alt"></i> 4517 Washington Ave, Manchester, Kentucky 39495</div>
+                                        <div class="item4 right-align"><i class="fa fa-lg fa-phone"></i> (123) 456-7890
+                                            <br>(123) 456-7890</div>
+
+                                    </div>
+
+                                </form>
+
+                            </div>
+                        </div>
                 </div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7982726639775!2d36.81061951475396!3d-1.2956286990550154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f11a75a8e9539%3A0xe111a8d7de6dead!2sKenya%20Water%20Towers%20Agency%20(NHIF%20Building%2C%2015th%20Floor)!5e0!3m2!1sen!2ske!4v1643538937496!5m2!1sen!2ske"
+                    width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
+
+            </section>
+
+
         </div>
-    </main><!-- #main -->
 
+</div>
 
-</div><!-- #content -->
+</div>
+</main>
+<!-- #main -->
+</div>
+<!-- #content -->
 
-{% endblock %}
-
-{% block myotherjs %}
-<script>
-
-
-</script>
+{% endblock %} {% block myotherjs %}
+<script></script>
 {% endblock %}
