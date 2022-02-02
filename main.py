@@ -23,11 +23,11 @@ def contact():
 
 @app.route("/tenders")
 def tenders():
-    return render_template("tenders.html")
+    return render_template("frontend/tenders.html")
 
 @app.route("/publications")
 def publications():
-    return render_template("publications.html")
+    return render_template("frontend/publications.html")
 
 ## End Frontend Routes
 
